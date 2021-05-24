@@ -1,4 +1,4 @@
-import React from 'react'
+// import React from 'react'
 import Image from 'next/image'
 import styled from 'styled-components'
 type Props = {
@@ -7,9 +7,9 @@ type Props = {
 }
 
 const ImageSpace = styled.div `
-    padding: .4em;
-    display: inline-block;
 
+    padding: .5em;
+    display: inline-block; 
 `
 // cannot use style components here to round the image, but i can use it to space the image
 
@@ -25,7 +25,8 @@ const ProfilePic = ({location = "", alt = ""}: Props) => {
             /> 
             <style jsx global>{`
             .imageStyle {
-                border-radius: 999px;         
+                border-radius: 999px;
+     
             }
             `}</style>
         </ImageSpace>
