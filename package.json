@@ -8,9 +8,11 @@
     "type-check": "tsc"
   },
   "dependencies": {
-    "next": "latest",
+    "@types/styled-components": "^5.1.9",
+    "next": "^10.2.2",
     "react": "^17.0.1",
-    "react-dom": "^17.0.1"
+    "react-dom": "^17.0.1",
+    "styled-components": "^5.3.0"
   },
   "devDependencies": {
     "@types/node": "^12.20.10",

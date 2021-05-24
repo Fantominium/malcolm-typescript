@@ -1,6 +1,7 @@
 import React, { ReactNode } from 'react'
 import Link from 'next/link'
 import Head from 'next/head'
+import ProfilePic from "../components/atoms/ProfilePic";
 
 type Props = {
   children?: ReactNode
@@ -17,7 +18,7 @@ const Layout = ({ children, title = 'This is the default title' }: Props) => (
     <header>
       <nav>
         <Link href="/">
-          <a>Home</a>
+          <a><ProfilePic location="/images/profile.jpg"/></a>
         </Link>{' '}
         |{' '}
         <Link href="/about">
