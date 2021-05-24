@@ -23,16 +23,14 @@ const HeaderStyle = styled.div `
     }
 `
 
-type Props = {
-    
-}
 
-const Header = (props: Props) => {
+
+const Header = () => {
     return (
         <HeaderStyle>
             <ProfilePic url="/images/profile.jpg" alt="profile picture"/>
             <HeaderLinks/>
-            
+
         </HeaderStyle>
     )
 }

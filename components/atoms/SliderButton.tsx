@@ -1,13 +1,13 @@
 
 type Props = {
-    checked: boolean
+    label ?: string
 }
 
 
-const SliderButton = (props: Props) => {
+const SliderButton = ({label = ""} : Props) => {
     return (
         <button>
-            
+            {label}
         </button>
     )
 }

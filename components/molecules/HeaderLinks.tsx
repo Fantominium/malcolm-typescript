@@ -18,11 +18,8 @@ const LinkStyle = styled.div`
 `
 
 
-type Props = {
-    
-}
 
-const HeaderLinks = (props: Props) => {
+const HeaderLinks = () => {
     return (
         <LinkStyle>
             <LinkAtom label="About Me" href="/about"/>
