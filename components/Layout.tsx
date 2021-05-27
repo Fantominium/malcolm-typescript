@@ -1,8 +1,7 @@
-import { ReactNode, createContext } from 'react'
+import { ReactNode } from 'react'
 import Head from 'next/head'
 import Header from "./organisms/Header"
 import { DarkMode, useDarkMode } from "./DarkModeContext";
-import SliderButton from "./atoms/SliderButton"
 
 
 type Props = {

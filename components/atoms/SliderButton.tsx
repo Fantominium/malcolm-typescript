@@ -1,5 +1,5 @@
-import {DarkMode, IDarkMode, useDarkMode} from '../DarkModeContext'
-import { useContext } from 'react';
+import { IDarkMode, useDarkMode} from '../DarkModeContext'
+// import { useContext } from 'react';
 
 
 type Props = {
@@ -15,7 +15,7 @@ const SliderButton = ({label = ""} : Props) => {
 
     return (
 
-        <button> {darkMode.enabled ? <span>Night</span> : <span>Day</span>}</button>
+        <button> {darkMode.enabled ? <span>Night</span> : <span>Day `${label}`</span>}</button>
     )
 }
 
