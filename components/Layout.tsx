@@ -15,6 +15,7 @@ type Props = {
 
 const Layout = ({ children, title = 'This is the default title' }: Props) => (
   <DarkMode.Provider value={useDarkMode()}>
+  {/* replace below div with the page style */}
     <div>
       <Head>
         <title>{title}</title>
@@ -22,7 +23,6 @@ const Layout = ({ children, title = 'This is the default title' }: Props) => (
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <Header/>
-      <SliderButton/>
       {children}
       <footer>
         <hr />

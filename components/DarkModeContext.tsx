@@ -16,3 +16,5 @@ DarkMode.displayName = "DarkModeContext"
 export const useDarkMode = () => useContext<IDarkMode>(DarkMode)
 
 
+//why not create the state for holding dark mode in here? Atomising this functionality.
+//Instead of having it on the layout level, have this on the organism level

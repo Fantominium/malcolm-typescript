@@ -6,13 +6,16 @@ type Props = {
     label ?: string
 }
 
+type DarkModeContext = IDarkMode
+
+
 const SliderButton = ({label = ""} : Props) => {
 
-    const dm = useDarkMode()
+    const darkMode: DarkModeContext = useDarkMode()
 
     return (
 
-        <button>enabled: {console.log(dm.enabled)}</button>
+        <button> {darkMode.enabled ? <span>Night</span> : <span>Day</span>}</button>
     )
 }
 

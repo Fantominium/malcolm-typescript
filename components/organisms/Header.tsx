@@ -1,7 +1,7 @@
 import ProfilePic from "../atoms/ProfilePic";
 import styled from "styled-components"
 import HeaderLinks from "../molecules/HeaderLinks"
-
+import SliderButton from "../atoms/SliderButton"
 
 const HeaderStyle = styled.div `
 
@@ -30,7 +30,7 @@ const Header = () => {
         <HeaderStyle>
             <ProfilePic url="/images/profile.jpg" alt="profile picture"/>
             <HeaderLinks/>
-
+            <SliderButton/>
         </HeaderStyle>
     )
 }
