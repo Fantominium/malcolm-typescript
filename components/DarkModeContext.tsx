@@ -1,20 +1,27 @@
-import { createContext, useContext } from "react";
+import { useReducer, useState } from "react";
 
 export interface IDarkMode {
     enabled: boolean
     // toggle ?: Function
 }
-const enabledDefault: boolean = false
+
+function reducer(state: boolean, action:string) {
+    return {
+        enabled:true
+    }
+}
 
 
-export const DarkMode = createContext<IDarkMode>({
-    enabled: enabledDefault
-})
-
-DarkMode.displayName = "DarkModeContext"
-
-export const useDarkMode = () => useContext<IDarkMode>(DarkMode)
+export const DarkModeContext = () => {
+    const [state, dispatch] = useReducer(reducer, {enabled:false})
 
 
-//why not create the state for holding dark mode in here? Atomising this functionality.
-//Instead of having it on the layout level, have this on the organism level
+    return (
+        
+        <button onClick={dispatch()}>
+            
+        </button>
+    )
+}
+
+export default DarkModeContext

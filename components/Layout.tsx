@@ -1,7 +1,7 @@
 import { ReactNode } from 'react'
 import Head from 'next/head'
 import Header from "./organisms/Header"
-import { DarkMode, useDarkMode } from "./DarkModeContext";
+// import { DarkMode, useDarkMode } from "./DarkModeContext";
 
 
 type Props = {
@@ -13,8 +13,8 @@ type Props = {
 // const enabled = createContext<IDarkMode>({enabled:false})
 
 const Layout = ({ children, title = 'This is the default title' }: Props) => (
-  <DarkMode.Provider value={useDarkMode()}>
-  {/* replace below div with the page style */}
+  // <DarkMode.Provider value={useDarkMode()}>
+  // {/* replace below div with the page style */}
     <div>
       <Head>
         <title>{title}</title>
@@ -28,7 +28,7 @@ const Layout = ({ children, title = 'This is the default title' }: Props) => (
         <span>I'm here to stay (Footer)</span>
       </footer>
     </div>
-  </DarkMode.Provider>
+  // </DarkMode.Provider>
 )
 
 export default Layout
