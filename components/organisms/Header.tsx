@@ -30,7 +30,7 @@ const Header = () => {
         <HeaderStyle>
             <ProfilePic url="/images/profile.jpg" alt="profile picture"/>
             <HeaderLinks/>
-            {/* <SliderButton/> */}
+            <SliderButton/>
         </HeaderStyle>
     )
 }
