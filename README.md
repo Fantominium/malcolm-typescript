@@ -1,4 +1,3 @@
-##Use useReducer and useContext to enable dark mode functionality for users visiting
 
 Run dockerfile to build image (period included)
 ` docker build -t malcolm-test-site-container:dev .`
@@ -16,3 +15,8 @@ Didn't use the -g option as i didn't want it installed globally in the container
 Context being passed correctly, however the issue is updating the dom and having the change persist through navigation and page refresh
 
 Also figure out how to have change reflected in styled components
+
+###TODO
+    - Create tests for this; unit, integration, and snapshot.
+    - integragtion script for github actions to run above tests and build project
+    - re-implement styling on old react site for these in styled components.
