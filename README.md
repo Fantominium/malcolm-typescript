@@ -14,3 +14,5 @@ https://mherman.org/blog/dockerizing-a-react-app/
 Didn't use the -g option as i didn't want it installed globally in the container.
 
 Rudementary reducer made, will use context along with it to have the change persist throughout the website
+
+Currently using context incorrectly, need to find out how to pass the value properly with further debugging.

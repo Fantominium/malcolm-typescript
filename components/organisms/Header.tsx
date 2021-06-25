@@ -1,13 +1,16 @@
 import ProfilePic from "../atoms/ProfilePic";
 import styled from "styled-components"
 import HeaderLinks from "../molecules/HeaderLinks"
-import SliderButton from "../atoms/SliderButton"
+// import {useContext} from "react"
+// import {DarkModeContext} from "../Layout"
+
+// const darkmode = useContext(DarkModeContext)
 
 const HeaderStyle = styled.div `
 
     padding: .5em;
     width: 100%;
-    background: rgba(255, 255, 255, 0.004);
+    background:{ darkmode ? rgba(234, 225, 255, 0.5) : rgba(255, 255, 255, 0.5};
     min-height: 150px;
     margin: 1.5em;
     display: flex;
@@ -30,7 +33,6 @@ const Header = () => {
         <HeaderStyle>
             <ProfilePic url="/images/profile.jpg" alt="profile picture"/>
             <HeaderLinks/>
-            <SliderButton/>
         </HeaderStyle>
     )
 }

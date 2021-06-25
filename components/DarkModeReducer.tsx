@@ -28,7 +28,9 @@ export const initialState: IState = {
 }
 
 export function DarkModeReducer(state: IState, actions:IActions): IState {
+
     const {type} = actions
+
 
     switch(type){
 
