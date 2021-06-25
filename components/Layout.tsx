@@ -1,13 +1,13 @@
-import { ReactNode, useReducer, createContext } from 'react'
+import { ReactNode, useReducer } from 'react'
 import Head from 'next/head'
 import Header from "./organisms/Header"
-import {DarkModeReducer, EnableAction, DisableAction} from './DarkModeReducer'
+import {DarkModeReducer, EnableAction, DisableAction, DarkModeContext} from './DarkModeReducer'
 
 type Props = {
   children?: ReactNode
   title?: string
 }
-export const DarkModeContext = createContext({})
+// export const DarkModeContext = createContext({})
 
 // const enabled = createContext<IDarkMode>({enabled:false})
 
@@ -44,4 +44,4 @@ export const Layout = ({ children, title = 'This is the default title' }: Props)
 
 }
 
-// export default Layout
+export default Layout

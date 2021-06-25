@@ -13,6 +13,6 @@ https://mherman.org/blog/dockerizing-a-react-app/
 
 Didn't use the -g option as i didn't want it installed globally in the container.
 
-Rudementary reducer made, will use context along with it to have the change persist throughout the website
+Context being passed correctly, however the issue is updating the dom and having the change persist through navigation and page refresh
 
-Currently using context incorrectly, need to find out how to pass the value properly with further debugging.
+Also figure out how to have change reflected in styled components
