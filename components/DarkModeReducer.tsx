@@ -11,7 +11,7 @@ enum Actions {
 
 type IActions = {
     type : Actions,
-    payload ?: boolean
+    payload ?: boolean|undefined
 }
 
 export const EnableAction: IActions = {

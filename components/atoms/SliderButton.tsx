@@ -1,4 +1,4 @@
-import {DarkModeReducer, initialState, EnableAction, DisableAction} from '../DarkModeReducer'
+import {DarkModeReducer, EnableAction, DisableAction} from '../DarkModeReducer'
 import { useReducer } from "react";
 
 
@@ -11,11 +11,12 @@ import { useReducer } from "react";
 
 const SliderButton = () => {
 
-    const [state, dispatch] = useReducer(DarkModeReducer, initialState)
+    const [state, dispatch] = useReducer(DarkModeReducer, {value:false})
+    console.log(state.value)
     return (
         <>
             {<button onClick={()=>dispatch(EnableAction)}> Night </button>}
-            Where the sate is {state.value}
+            Where the Dark Mode is {state.value ? "Enabled" : "Disabled" }   
             {<button onClick={()=>dispatch(DisableAction)}> Day </button>}
         </>
     )
