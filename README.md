@@ -13,6 +13,4 @@ https://mherman.org/blog/dockerizing-a-react-app/
 
 Didn't use the -g option as i didn't want it installed globally in the container.
 
-###use context inplemented at a basic level for understanding, use reducer will be the same for a simple login
-
-Login func to be built into reducer
+Rudementary reducer made, will use context along with it to have the change persist throughout the website
