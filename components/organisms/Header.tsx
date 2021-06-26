@@ -1,20 +1,21 @@
 import ProfilePic from "../atoms/ProfilePic";
 import styled from "styled-components"
 import HeaderLinks from "../molecules/HeaderLinks"
-import {useContext} from "react"
-import {DarkModeContext} from "../DarkModeReducer"
+// import {useContext} from "react"
+// import {DarkModeContext} from "../DarkModeReducer"
 
+// const darkmode = useContext(DarkModeContext)
 
-
-const Header = () => {
-const darkmode = useContext(DarkModeContext)
-// console.log(darkmode)
+const theme = {
+    main: "black"
+}
 
 const HeaderStyle = styled.div `
-    --darkmode = ${darkmode}
+
     padding: .5em;
     width: 100%;
-    background: ${darkmode ? "rgba(234, 225, 255, 0.5)" : "rgba(255, 255, 255, 0.5}"};
+    /* background: rgba(255, 255, 255, 0.5); */
+    background: ${theme.main}
     min-height: 150px;
     margin: 1.5em;
     display: flex;
@@ -32,9 +33,9 @@ const HeaderStyle = styled.div `
 
 
 
-
+const Header = () => {
     return (
-        <HeaderStyle>
+        <HeaderStyle theme={{main: "yellow"}}>
             <ProfilePic url="/images/profile.jpg" alt="profile picture"/>
             <HeaderLinks/>
         </HeaderStyle>
