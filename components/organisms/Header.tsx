@@ -1,13 +1,14 @@
 import ProfilePic from "../atoms/ProfilePic";
-import styled from "styled-components"
+import styled, {ThemeProvider} from "styled-components"
 import HeaderLinks from "../molecules/HeaderLinks"
+
 // import {useContext} from "react"
 // import {DarkModeContext} from "../DarkModeReducer"
 
-// const darkmode = useContext(DarkModeContext)
-
-const theme = {
-    main: "black"
+type IProps = {
+    theme: {
+        color: string
+    }
 }
 
 const HeaderStyle = styled.div `
@@ -15,7 +16,7 @@ const HeaderStyle = styled.div `
     padding: .5em;
     width: 100%;
     /* background: rgba(255, 255, 255, 0.5); */
-    background: ${theme.main}
+    background: ${(props:IProps) => props.theme.color};
     min-height: 150px;
     margin: 1.5em;
     display: flex;
@@ -30,15 +31,25 @@ const HeaderStyle = styled.div `
         justify-content: space-between;
     }
 `
+HeaderStyle.defaultProps = {
+    theme: {
+        color: "black"
+    }
+}
 
 
 
 const Header = () => {
+    const theme = { //use context here to influence the color of the banner as a start
+        color:"blue"
+    }
     return (
-        <HeaderStyle theme={{main: "yellow"}}>
-            <ProfilePic url="/images/profile.jpg" alt="profile picture"/>
-            <HeaderLinks/>
-        </HeaderStyle>
+        <ThemeProvider theme={theme}>
+            <HeaderStyle>
+                <ProfilePic url="/images/profile.jpg" alt="profile picture"/>
+                <HeaderLinks/>
+            </HeaderStyle>
+        </ThemeProvider>
     )
 }
 

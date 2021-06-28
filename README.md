@@ -20,3 +20,5 @@ Also figure out how to have change reflected in styled components
     - Create tests for this; unit, integration, and snapshot.
     - integragtion script for github actions to run above tests and build project
     - re-implement styling on old react site for these in styled components.
+    - continue working on using the context to change the color of the banner.
+    - solve the persistence issue of the context through navigation.
