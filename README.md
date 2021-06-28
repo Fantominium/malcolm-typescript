@@ -12,10 +12,16 @@ https://mherman.org/blog/dockerizing-a-react-app/
 
 Didn't use the -g option as i didn't want it installed globally in the container.
 
-##TODO
+Context being passed correctly, however the issue is updating the dom and having the change persist through navigation and page refresh
+
+Also figure out how to have change reflected in styled components
+
+** Made mistake in dockerising. Need to publish image when created, so it can be pulled and run on another's comp.**
+
+
+###TODO
     - Create tests for this; unit, integration, and snapshot.
     - integragtion script for github actions to run above tests and build project
-    - re-implement styling on old react site for these in styled components, as well as dealing with footer.
-    - continue working on using the context to change the color of the banner. **DONE**
-    - make Darkmode toggle button a single button
+    - re-implement styling on old react site for these in styled components.
+    - continue working on using the context to change the color of the banner.
     - solve the persistence issue of the context through navigation.
