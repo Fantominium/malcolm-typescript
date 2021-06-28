@@ -2,8 +2,8 @@ import ProfilePic from "../atoms/ProfilePic";
 import styled, {ThemeProvider} from "styled-components"
 import HeaderLinks from "../molecules/HeaderLinks"
 
-// import {useContext} from "react"
-// import {DarkModeContext} from "../DarkModeReducer"
+import {useContext, useEffect} from "react"
+import {DarkModeContext} from "../DarkModeReducer"
 
 type IProps = {
     theme: {
@@ -40,8 +40,15 @@ HeaderStyle.defaultProps = {
 
 
 const Header = () => {
-    const theme = { //use context here to influence the color of the banner as a start
-        color:"blue"
+
+    const themeContext = useContext(DarkModeContext)
+
+    useEffect(() => {
+        //using the side effect to change color with each click
+    }, [themeContext.value])
+
+    const theme = { //use context here to influence the color of the banner
+        color: themeContext.value ? "blue" : "yellow"
     }
     return (
         <ThemeProvider theme={theme}>
