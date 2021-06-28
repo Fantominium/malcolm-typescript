@@ -1,21 +1,18 @@
-import { DarkModeContext} from '../DarkModeContext'
-// import { useContext } from 'react';
+import {DarkModeReducer, EnableAction, DisableAction} from '../DarkModeReducer'
+import { useReducer } from "react";
 
 
-type Props = {
-    label ?: string
-}
 
-// type DarkModeContext = IDarkMode
+const SliderButton = () => {
 
-
-const SliderButton = ({label = ""} : Props) => {
-
-    // const darkMode: DarkModeContext = useDarkMode()
+    const [state, dispatch] = useReducer(DarkModeReducer, {value:false})
 
     return (
-        <DarkModeContext/>
-        // <button> {darkMode.enabled ? <span>Night</span> : <span>Day `${label}`</span>}</button>
+        <>
+            {<button onClick={()=>dispatch(EnableAction)}> Night </button>}
+            Where the Dark Mode is {state.value ? "Enabled" : "Disabled" }   
+            {<button onClick={()=>dispatch(DisableAction)}> Day </button>}
+        </>
     )
 }
 
