@@ -1,14 +1,18 @@
 
-Run dockerfile to build image (period included)
+###Run dockerfile to build image locally (period included)
 ` docker build -t malcolm-test-site-container:dev .`
 
-run image in interactive mode for development
-`docker run -it -d --rm -v ${PWD}:/app -v /app/node_modules -p 3000:3000 -e CHOKIDAR_USEPOLLING=true malcolm-test-site-container:dev`
+###Pull the image
+`docker pull fantominium/malcolm-ts-test:dev`
 
+run image (in development mode)
+`docker compose up -d --build`
 
 followed this for dockerising:
-
 https://mherman.org/blog/dockerizing-a-react-app/
+
+This video was also  helpful:
+https://www.youtube.com/watch?v=iqqDU2crIEQ&t=1276s
 
 Didn't use the -g option as i didn't want it installed globally in the container.
 
@@ -16,7 +20,7 @@ Context being passed correctly, however the issue is updating the dom and having
 
 Also figure out how to have change reflected in styled components
 
-** Made mistake in dockerising. Need to publish image when created, so it can be pulled and run on another's comp.**
+Image published to dockerhub. Will try pulling and running soon
 
 
 ###TODO
