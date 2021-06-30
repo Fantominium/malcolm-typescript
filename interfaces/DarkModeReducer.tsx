@@ -1,5 +1,10 @@
 import {IState, IActions} from "./Types"
 
+/**
+ * change this to a toggle!!!
+ */
+
+
 export const Actions = {
     ENABLE : "enable",
     DISABLE : "disable"
