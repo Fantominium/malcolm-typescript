@@ -1,9 +1,4 @@
-import {createContext} from "react"
-
-export type IState = {
-    value: boolean
-
-}
+import {IState} from "./Types"
 // export const DarkModeContext = createContext<IState>({value:false})
 
 enum Actions {

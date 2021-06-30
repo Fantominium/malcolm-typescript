@@ -1,4 +1,4 @@
-import {DarkModeReducer, EnableAction, DisableAction} from '../DarkModeReducer'
+import {DarkModeReducer, EnableAction, DisableAction} from '../../interfaces/DarkModeReducer'
 import { useReducer } from "react";
 
 
