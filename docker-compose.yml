@@ -1,12 +1,11 @@
 version: '3.7'
 
 services:
-
   sample:
     container_name: malcolm-test
     build:
       context: .
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile     
     volumes:
       - '.:/app'
       - '/app/node_modules'

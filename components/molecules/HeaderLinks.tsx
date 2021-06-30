@@ -1,5 +1,6 @@
 import styled from "styled-components"
 import LinkAtom from "../atoms/LinksAtom"
+import SliderButton from "../atoms/SliderButton"
 
 const LinkStyle = styled.div`
   display: flex;
@@ -25,7 +26,7 @@ const HeaderLinks = () => {
             <LinkAtom label="About Me" href="/about"/>
             <LinkAtom label="Users List" href="/users"/>
             <LinkAtom label="github" href="https://github.com/Fantominium"/>
-
+            <SliderButton/>
         </LinkStyle>
     )
 }
