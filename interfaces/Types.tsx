@@ -14,3 +14,13 @@ export type ChildrenNodeProps = {
 export type IState = {
     value ?: boolean | undefined
 }
+
+export type Actions = {
+    ENABLE : string
+    DISABLE: string
+}
+
+export type IActions = {
+    type : string
+    payload ?: boolean|undefined
+}
