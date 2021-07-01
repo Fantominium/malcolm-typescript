@@ -1,20 +1,15 @@
-import {createContext} from "react"
+import {IState, IActions} from "./Types"
 
-type IState = {
-    value: boolean
+/**
+ * change this to a toggle!!!
+ */
 
+
+export const Actions = {
+    ENABLE : "enable",
+    DISABLE : "disable"
 }
-export const DarkModeContext = createContext<IState>({value:false})
 
-enum Actions {
-    ENABLE = "enable",
-    DISABLE = "disable"
-}
-
-type IActions = {
-    type : Actions,
-    payload ?: boolean|undefined
-}
 
 export const EnableAction: IActions = {
     type: Actions.ENABLE,

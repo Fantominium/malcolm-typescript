@@ -1,9 +1,9 @@
 import ProfilePic from "../atoms/ProfilePic";
 import styled, {ThemeProvider} from "styled-components"
 import HeaderLinks from "../molecules/HeaderLinks"
-
-import {useContext, useEffect} from "react"
-import {DarkModeContext} from "../DarkModeReducer"
+import {useContext, useEffect, ReactNode} from "react"
+import { IState } from "../../interfaces/Types";
+import { DarkModeContext } from "../Layout";
 
 type IProps = {
     theme: {
@@ -11,6 +11,10 @@ type IProps = {
     }
 }
 
+type Props = {
+    children?: ReactNode
+    title?: string
+  }
 const HeaderStyle = styled.div `
 
     padding: .5em;
@@ -18,7 +22,7 @@ const HeaderStyle = styled.div `
     /* background: rgba(255, 255, 255, 0.5); */
     background: ${(props:IProps) => props.theme.color};
     min-height: 150px;
-    margin: 1.5em;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -39,9 +43,9 @@ HeaderStyle.defaultProps = {
 
 
 
-const Header = () => {
+const Header = ({ children }: Props) => {
 
-    const themeContext = useContext(DarkModeContext)
+    const themeContext = useContext<IState>(DarkModeContext)
 
     useEffect(() => {
         //using the side effect to change color with each click
@@ -54,7 +58,9 @@ const Header = () => {
         <ThemeProvider theme={theme}>
             <HeaderStyle>
                 <ProfilePic url="/images/profile.jpg" alt="profile picture"/>
-                <HeaderLinks/>
+                <HeaderLinks>
+                {children}
+                </HeaderLinks>
             </HeaderStyle>
         </ThemeProvider>
     )
