@@ -1,6 +1,6 @@
 import styled, {ThemeProvider} from "styled-components"
 import { IProps, IState } from "../../interfaces/Types"
-import {useContext, useEffect, ReactNode} from "react"
+import {useContext, useEffect} from "react"
 import { DarkModeContext } from "../Layout";
 
 

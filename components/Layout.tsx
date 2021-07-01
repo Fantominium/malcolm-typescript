@@ -1,20 +1,15 @@
-import { ReactNode, useReducer, createContext } from 'react'
+import { useReducer, createContext } from 'react'
 import Head from 'next/head'
-import styled from 'styled-components'
 import Header from "./organisms/Header"
 import Content from "./organisms/Content"
 import Footer from './organisms/Footer'
 import {DarkModeReducer, ToggleAction} from '../interfaces/DarkModeReducer'
-import{IState} from "../interfaces/Types"
+import{ChildrenNodeProps, IState} from "../interfaces/Types"
 import LayoutStyle from "./organisms/LayoutStyle"
 
-type Props = {
-  children?: ReactNode
-  title?: string
-}
 export const DarkModeContext = createContext<IState>({})
 
-export const Layout = ({ children, title = 'This is the default title' }: Props) => {
+export const Layout = ({ children, title = 'This is the default title' }: ChildrenNodeProps) => {
 
   const [state, dispatch] = useReducer(DarkModeReducer, {value:false})
 
