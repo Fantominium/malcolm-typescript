@@ -1,20 +1,10 @@
 import ProfilePic from "../atoms/ProfilePic";
 import styled, {ThemeProvider} from "styled-components"
 import HeaderLinks from "../molecules/HeaderLinks"
-import {useContext, useEffect, ReactNode} from "react"
-import { IState } from "../../interfaces/Types";
+import {useContext, useEffect} from "react"
+import { ChildrenNodeProps, IProps, IState } from "../../interfaces/Types";
 import { DarkModeContext } from "../Layout";
 
-type IProps = {
-    theme: {
-        color: string
-    }
-}
-
-type Props = {
-    children?: ReactNode
-    title?: string
-  }
 const HeaderStyle = styled.div `
 
     padding: .5em;
@@ -35,15 +25,8 @@ const HeaderStyle = styled.div `
         justify-content: space-between;
     }
 `
-HeaderStyle.defaultProps = {
-    theme: {
-        color: "black"
-    }
-}
 
-
-
-const Header = ({ children }: Props) => {
+const Header = ({ children }: ChildrenNodeProps) => {
 
     const themeContext = useContext<IState>(DarkModeContext)
 
@@ -52,7 +35,7 @@ const Header = ({ children }: Props) => {
     }, [themeContext.value])
 
     const theme = { //use context here to influence the color of the banner
-        color: themeContext.value ? "blue" : "yellow"
+        // color: themeContext.value ? "blue" : "yellow"
     }
     return (
         <ThemeProvider theme={theme}>

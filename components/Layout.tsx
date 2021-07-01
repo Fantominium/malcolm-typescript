@@ -3,8 +3,10 @@ import Head from 'next/head'
 import styled from 'styled-components'
 import Header from "./organisms/Header"
 import Content from "./organisms/Content"
+import Footer from './organisms/Footer'
 import {DarkModeReducer, ToggleAction} from '../interfaces/DarkModeReducer'
 import{IState} from "../interfaces/Types"
+import LayoutStyle from "./organisms/LayoutStyle"
 
 type Props = {
   children?: ReactNode
@@ -12,45 +14,30 @@ type Props = {
 }
 export const DarkModeContext = createContext<IState>({})
 
-const LayoutTest = styled.body `
-  
-  margin: 0 auto;
-
-  @media (min-width: 1350px) {
-    margin: 0 auto;
-  }
-
-`
-
 export const Layout = ({ children, title = 'This is the default title' }: Props) => {
 
   const [state, dispatch] = useReducer(DarkModeReducer, {value:false})
 
 
   return (
-    <LayoutTest>
     <DarkModeContext.Provider value = {state}>
-
-      <div>
-        <Head>
-          <title>{title}</title>
-          <meta charSet="utf-8" />
-          <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-        </Head>
-        
-        <Header>
-          {state.value ? <button onClick={()=>dispatch(ToggleAction)}> Day </button> : <button onClick={()=>dispatch(ToggleAction)}> Night </button>}
-        </Header>
-          <Content>
-            {children}
-          </Content>
-          
-          <footer>
-            <span>I'm here to stay (Footer)</span>
-          </footer>
-      </div>
+      <LayoutStyle>
+        <div>
+          <Head>
+            <title>{title}</title>
+            <meta charSet="utf-8" />
+            <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+          </Head>
+          <Header>
+            {state.value ? <button onClick={()=>dispatch(ToggleAction)}> Day </button> : <button onClick={()=>dispatch(ToggleAction)}> Night </button>}
+          </Header>
+            <Content>
+              {children}
+            </Content>
+            <Footer/>
+        </div>
+      </LayoutStyle>
     </DarkModeContext.Provider>
-    </LayoutTest>
   )
 
 }
