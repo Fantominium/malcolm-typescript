@@ -1,23 +1,13 @@
 import {IState, IActions} from "./Types"
 
-/**
- * change this to a toggle!!!
- */
-
 
 export const Actions = {
-    ENABLE : "enable",
-    DISABLE : "disable"
+    TOGGLE: "toggle"
 }
 
 
-export const EnableAction: IActions = {
-    type: Actions.ENABLE,
-    payload: true
-}
-export const DisableAction: IActions = {
-    type: Actions.DISABLE,
-    payload: false
+export const ToggleAction: IActions = {
+    type: Actions.TOGGLE,
 }
 
 export const initialState: IState = {
@@ -31,17 +21,11 @@ export function DarkModeReducer(state: IState, actions:IActions): IState {
 
     switch(type){
 
-        case Actions.ENABLE :
-        return {
-            ...state,
-            value: true,
-        }
-
-        case Actions.DISABLE :
-        return {
-            ...state,
-            value: false,
-        }
+        case Actions.TOGGLE :
+            return {
+                ...state,
+                value: !state.value,
+            }
 
         default:
         return initialState

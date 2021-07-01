@@ -3,7 +3,7 @@ import Head from 'next/head'
 import styled from 'styled-components'
 import Header from "./organisms/Header"
 import Content from "./organisms/Content"
-import {DarkModeReducer, EnableAction, DisableAction} from '../interfaces/DarkModeReducer'
+import {DarkModeReducer, ToggleAction} from '../interfaces/DarkModeReducer'
 import{IState} from "../interfaces/Types"
 
 type Props = {
@@ -39,7 +39,7 @@ export const Layout = ({ children, title = 'This is the default title' }: Props)
         </Head>
         
         <Header>
-          {state.value ? <button onClick={()=>dispatch(DisableAction)}> Day </button> : <button onClick={()=>dispatch(EnableAction)}> Night </button>}
+          {state.value ? <button onClick={()=>dispatch(ToggleAction)}> Day </button> : <button onClick={()=>dispatch(ToggleAction)}> Night </button>}
         </Header>
           <Content>
             {children}
