@@ -16,8 +16,7 @@ export type IState = {
 }
 
 export type Actions = {
-    ENABLE : string
-    DISABLE: string
+    TOGGLE ?: string
 }
 
 export type IActions = {
