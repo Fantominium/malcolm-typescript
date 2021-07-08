@@ -5,13 +5,21 @@ import { DarkModeContext } from "../Layout"
 
 const LayoutStyles = styled.body `
   margin: 0 auto;
+  min-height: 100%; 
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  background-color: ${(props:IProps) => props.theme.color};
 
 
 
 @media (min-width: 1350px) {
   margin: 0 auto;
-  background-color: ${(props:IProps) => props.theme.color};
-
+  /* background-color: ${(props:IProps) => props.theme.color}; */
+  min-height: 100%; 
+  padding: 0;
+  display: flex;
+  flex-direction: column;
 }
 
 `

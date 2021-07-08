@@ -13,6 +13,9 @@ const FooterStyle = styled.footer`
     flex-flow: row wrap;
     justify-content: center;
     width: 100%;
+    left: 0;
+    bottom: 0;
+    position: fixed;
     input {
         margin-right: .5em;
         margin-left: .5em;

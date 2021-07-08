@@ -5,10 +5,19 @@ import { DarkModeContext } from "../Layout";
 
 
 const BodyStyles = styled.div `
+    min-height: 100%;
+    flex-grow: 1;
+    margin: 0;
+    color: red;
+    background: ${(props:IProps) => props.theme.color};
 
-  margin: 1em;
-  background: ${(props:IProps) => props.theme.color};
-  min-height: 100%;
+  @media (min-width: 1350px) {
+    min-height: 100%;
+    flex-grow: 1;
+    margin: 0;
+    color: red;
+
+  }
 `
 const Content = ({children}:ChildrenNodeProps) => {
     const themeContext = useContext<IState>(DarkModeContext)
