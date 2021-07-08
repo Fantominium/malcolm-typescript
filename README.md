@@ -32,7 +32,7 @@ Refactor DarkModeContext to being a toggle. - DONE
 ### TODO
 
     - Create tests for this; unit, integration, and snapshot.
-    - integragtion script for github actions to run above tests and build project
-    - re-implement styling on old react site for these in styled components.
-      - this might have been broken, need to fix big empty space in middle of site. Problem with positioning elements.
-    - solve the persistence issue of the context through navigation.
+    - integragtion script for github actions to run above tests and build project. **IN PROG**
+    - re-implement styling on old react site for these in styled components. (Not yet, will do soon)
+      - this might have been broken, need to fix big empty space in middle of site. Problem with positioning elements. **FIXED**
+    - solve the persistence issue of the context through navigation. (Will need a session/broser cookie, or make an api to take the easy route)
