@@ -29,9 +29,11 @@ Image published to dockerhub. Will try pulling and running soon
 
 Refactor DarkModeContext to being a toggle. - DONE
 
+
+Will use the malcolm branch to write and push tests!
 ### TODO
 
-    - Create tests for this; unit, integration, and snapshot.
+    - Create tests for this; unit, integration, and snapshot. **Using Malcolm branch for this**
     - integragtion script for github actions to run above tests and build project. **IN PROG**
     - re-implement styling on old react site for these in styled components. (Not yet, will do soon)
       - this might have been broken, need to fix big empty space in middle of site. Problem with positioning elements. **FIXED**
