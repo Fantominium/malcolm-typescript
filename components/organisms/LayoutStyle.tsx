@@ -15,7 +15,6 @@ const LayoutStyles = styled.body `
 
 @media (min-width: 1350px) {
   margin: 0 auto;
-  /* background-color: ${(props:IProps) => props.theme.color}; */
   min-height: 100%; 
   padding: 0;
   display: flex;
@@ -34,7 +33,7 @@ const LayoutStyle = ({ children }: ChildrenNodeProps) => {
     }, [themeContext.value])
 
     const theme = { //use context here to influence the color of the banner
-        color: themeContext.value ? "green" : "skyblue"
+        color: themeContext.value ? "skyblue" : "green"
     }
     return (
         <ThemeProvider theme={theme}>

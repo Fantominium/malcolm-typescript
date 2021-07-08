@@ -5,14 +5,14 @@ import { DarkModeContext } from "../Layout";
 
 
 const BodyStyles = styled.div `
-    min-height: 100%;
+    min-height: 100vh;
     flex-grow: 1;
     margin: 0;
     color: red;
     background: ${(props:IProps) => props.theme.color};
 
   @media (min-width: 1350px) {
-    min-height: 100%;
+    min-height: 100vh;
     flex-grow: 1;
     margin: 0;
     color: red;
