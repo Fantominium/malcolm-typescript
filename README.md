@@ -21,16 +21,15 @@ This video was also  helpful:
 
 Didn't use the -g option as i didn't want it installed globally in the container.
 
-Context being passed correctly, however the issue is updating the dom and having the change persist through navigation and page refresh
+Context being passed correctly, however the issue is updating the dom and having the change persist through navigation and page refresh - will store in local storage, will have to update on change of darkmode.
 
 Also figure out how to have change reflected in styled components  - DONE
 
-Image published to dockerhub. Will try pulling and running soon
-
-Refactor DarkModeContext to being a toggle. - DONE
-
+Image published to dockerhub. Will try pulling and running soon - DONE
 
 Will use the malcolm branch to write and push tests!
+
+*Come back to testing in the tests folder for checking on what is rendered*
 ### TODO
 
     - Create tests for this; unit, integration, and snapshot. **Using Malcolm branch for this**

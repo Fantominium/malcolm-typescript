@@ -1,21 +1,28 @@
-import { useReducer, createContext } from 'react'
+import { useReducer, createContext, useEffect } from 'react'
 import Head from 'next/head'
 import Header from "./organisms/Header"
 import Content from "./organisms/Content"
 import Footer from './organisms/Footer'
 import {DarkModeReducer, ToggleAction} from '../interfaces/DarkModeReducer'
-import{ChildrenNodeProps, IState} from "../interfaces/Types"
+import{ChildrenNodeProps, IContext} from "../interfaces/Types"
 import LayoutStyle from "./organisms/LayoutStyle"
+import SliderButton from './atoms/SliderButton'
 
-export const DarkModeContext = createContext<IState>({})
+export const DarkModeContext = createContext<IContext>({})
 
 export const Layout = ({ children, title = 'This is the default title' }: ChildrenNodeProps) => {
 
-  const [state, dispatch] = useReducer(DarkModeReducer, {value:false})
+  const [state, dispatch] = useReducer(DarkModeReducer,{value:false})
 
+  useEffect(() => {
+    localStorage.setItem('darkmode', JSON.stringify('state'))
+    
+  }, [state])
 
   return (
-    <DarkModeContext.Provider value = {state}>
+    //retrieve darkmode and use it here
+    
+    <DarkModeContext.Provider value = {{state, dispatch}}>
       <LayoutStyle>
         <div>
           <Head>
@@ -24,7 +31,7 @@ export const Layout = ({ children, title = 'This is the default title' }: Childr
             <meta name="viewport" content="initial-scale=1.0, width=device-width" />
           </Head>
           <Header>
-            {state.value ? <button onClick={()=>dispatch(ToggleAction)}> Day </button> : <button onClick={()=>dispatch(ToggleAction)}> Night </button>}
+            <SliderButton dispatch={dispatch}/>
           </Header>
             <Content>
               {children}

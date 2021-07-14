@@ -1,17 +1,24 @@
-import {DarkModeReducer, EnableAction, DisableAction} from '../../interfaces/DarkModeReducer'
-import { useReducer } from "react";
+import {ToggleAction} from '../../interfaces/DarkModeReducer'
+import { useContext, useEffect } from "react";
+import { IContext } from '../../interfaces/Types';
+import { DarkModeContext } from "../Layout"
 
 
 
-const SliderButton = () => {
+const SliderButton = (Props:IContext ) => {
 
-    const [state, dispatch] = useReducer(DarkModeReducer, {value:false})
+    const themeContext = useContext<IContext>(DarkModeContext)
+    const themeValue = themeContext.state?.value
+
+    useEffect(() => {
+        //using the side effect to change color with each click
+    }, [themeContext.state?.value])
 
     return (
         <>
-            {<button onClick={()=>dispatch(EnableAction)}> Night </button>}
-            Where the Dark Mode is {state.value ? "Enabled" : "Disabled" }   
-            {<button onClick={()=>dispatch(DisableAction)}> Day </button>}
+            {themeValue ? 
+            <button onClick={()=>Props.dispatch? Props.dispatch(ToggleAction): ''}> Day </button> : 
+            <button onClick={()=>Props.dispatch? Props.dispatch(ToggleAction): ''}> Night </button>}
         </>
     )
 }

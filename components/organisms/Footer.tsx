@@ -1,13 +1,12 @@
 import styled, {ThemeProvider} from "styled-components"
-import { IProps, IState } from "../../interfaces/Types"
+import { IContext, IProps } from "../../interfaces/Types"
 import {useContext, useEffect} from "react"
 import { DarkModeContext } from "../Layout";
 
 
 const FooterStyle = styled.footer`
 
-    /* background: rgba(248, 248, 248, 0.292); */
-    background: ${(props:IProps) => props.theme.color};
+    color: ${(props:IProps) => props.theme.color};
     min-height: 100px;
     display: flex;
     flex-flow: row wrap;
@@ -33,14 +32,15 @@ const FooterStyle = styled.footer`
 
 
 const Footer = () => {
-    const themeContext = useContext<IState>(DarkModeContext)
+    const themeContext = useContext<IContext>(DarkModeContext)
+    const themeValue = themeContext.state?.value
 
     useEffect(() => {
         //using the side effect to change color with each click
-    }, [themeContext.value])
+    }, [themeContext.state?.value])
 
     const theme = { //use context here to influence the color of the banner
-        // color: themeContext.value ? "blue" : "yellow"
+        color: themeValue ? "hsl(215, 60%, 20%)" : "hsl(215, 60%, 20%)"
     }
     return(
         <ThemeProvider theme={theme}>

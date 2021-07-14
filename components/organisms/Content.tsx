@@ -1,5 +1,5 @@
 import styled, {ThemeProvider} from "styled-components"
-import {IProps, ChildrenNodeProps, IState} from "../../interfaces/Types"
+import {IProps, ChildrenNodeProps, IContext} from "../../interfaces/Types"
 import {useContext, useEffect} from "react"
 import { DarkModeContext } from "../Layout";
 
@@ -8,6 +8,7 @@ const BodyStyles = styled.div `
     min-height: 100vh;
     flex-grow: 1;
     margin: 0;
+    padding: .5rem;
     background: ${(props:IProps) => props.theme.color};
 
   @media (min-width: 1350px) {
@@ -18,13 +19,15 @@ const BodyStyles = styled.div `
   }
 `
 const Content = ({children}:ChildrenNodeProps) => {
-    const themeContext = useContext<IState>(DarkModeContext)
+    const themeContext = useContext<IContext>(DarkModeContext)
+    const themeValue = themeContext.state?.value
+
     useEffect(() => {
         //using the side effect to change color with each click
-    }, [themeContext.value])
+    }, [themeContext.state?.value])
 
     const theme = { //use context here to influence the color of the banner
-        color: themeContext.value ? "rgba(71, 120, 127, 0.135)" : "rgba(177, 180, 134, 0.183)"
+        color: themeValue ? "hsl(215, 60%, 45%)" : "hsl(205, 70%, 45%)"
     }
     return (
         <ThemeProvider theme={theme}>
