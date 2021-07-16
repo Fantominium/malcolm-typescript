@@ -1,6 +1,5 @@
 import styled from "styled-components"
 import LinkAtom from "../atoms/LinksAtom"
-import SliderButton from "../atoms/SliderButton"
 import {ReactNode} from "react"
 
 const LinkStyle = styled.div`
@@ -9,7 +8,6 @@ const LinkStyle = styled.div`
   flex-wrap: wrap;
   width: 40%;
   margin: .7em;
-  /* justify-content: space-between; */
   align-items: center;
 
   @media(min-width: 1350px){
@@ -30,7 +28,6 @@ const HeaderLinks = ({ children }: Props) => {
             <LinkAtom label="About Me" href="/about"/>
             <LinkAtom label="Users List" href="/users"/>
             <LinkAtom label="github" href="https://github.com/Fantominium"/>
-            {/* <SliderButton/> */}
             {children}
         </LinkStyle>
     )

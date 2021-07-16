@@ -27,6 +27,9 @@ Also figure out how to have change reflected in styled components  - DONE
 
 Image published to dockerhub. Will try pulling and running soon - DONE
 
+-- using the init func in the reducer, but i need to figue out whats happening with useEffect and Local storage
+its being set and changed, but not maintained, being reset somewhere. --
+
 Will use the malcolm branch to write and push tests!
 
 *Come back to testing in the tests folder for checking on what is rendered*

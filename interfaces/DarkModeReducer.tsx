@@ -10,14 +10,10 @@ export const ToggleAction: IActions = {
     type: Actions.TOGGLE,
 }
 
-export const initialState: IState = {
-    value: false
-}
 
-export function DarkModeReducer(state: IState, actions:IActions): IState {
+export function DarkModeReducer(state: IState, actions:IActions) : IState {
 
     const {type} = actions
-
 
     switch(type){
 
@@ -28,7 +24,10 @@ export function DarkModeReducer(state: IState, actions:IActions): IState {
             }
 
         default:
-        return initialState
+            return {                
+                ...state,
+                value: false,
+            }
     }
 }
 

@@ -3,8 +3,8 @@ import Head from 'next/head'
 import Header from "./organisms/Header"
 import Content from "./organisms/Content"
 import Footer from './organisms/Footer'
-import {DarkModeReducer, ToggleAction} from '../interfaces/DarkModeReducer'
-import{ChildrenNodeProps, IContext} from "../interfaces/Types"
+import {DarkModeReducer} from '../interfaces/DarkModeReducer'
+import{ChildrenNodeProps, IContext, IState} from "../interfaces/Types"
 import LayoutStyle from "./organisms/LayoutStyle"
 import SliderButton from './atoms/SliderButton'
 
@@ -12,10 +12,12 @@ export const DarkModeContext = createContext<IContext>({})
 
 export const Layout = ({ children, title = 'This is the default title' }: ChildrenNodeProps) => {
 
-  const [state, dispatch] = useReducer(DarkModeReducer,{value:false})
+  const init = ():IState => localStorage.getItem('darkmode') ? JSON.parse(localStorage.getItem('darkmode')!) : { value: false }
+
+  const [state, dispatch] = useReducer(DarkModeReducer,init())
 
   useEffect(() => {
-    localStorage.setItem('darkmode', JSON.stringify('state'))
+    localStorage.setItem('darkmode', JSON.stringify(state))
     
   }, [state])
 
