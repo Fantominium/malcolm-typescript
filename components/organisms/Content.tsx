@@ -9,7 +9,7 @@ const BodyStyles = styled.div `
     flex-grow: 1;
     margin: 0;
     padding: .5rem;
-    background: ${(props:IProps) => props.theme.color};
+    /* background: ${(props:IProps) => props.theme.color}; */
 
   @media (min-width: 1350px) {
     min-height: 100vh;
@@ -27,7 +27,7 @@ const Content = ({children}:ChildrenNodeProps) => {
     }, [themeContext.state?.value])
 
     const theme = { //use context here to influence the color of the banner
-        color: themeValue ? "hsl(215, 60%, 45%)" : "hsl(205, 70%, 45%)"
+        color: themeValue ? "hsl(215, 60%, 45%)" : "hsl(205, 70%, 80%)"
     }
     return (
         <ThemeProvider theme={theme}>

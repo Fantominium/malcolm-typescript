@@ -24,7 +24,7 @@ Didn't use the -g option as i didn't want it installed globally in the container
 ## Objectives
 
 using the init func in the reducer, but i need to figue out whats happening with useEffect and Local storage
-its being set and changed, but not maintained, being reset somewhere. **DONE** 
+its being set and changed, but not maintained, being reset somewhere. **DONE**
 
 - Needed to check to see if the window obj was created, since my app renders first on
 the server, which presents my next challenge:
