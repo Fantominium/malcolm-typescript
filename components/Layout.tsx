@@ -12,7 +12,7 @@ export const DarkModeContext = createContext<IContext>({})
 
 export const Layout = ({ children, title = 'This is the default title' }: ChildrenNodeProps) => {
 
-  const init = ():IState => localStorage.getItem('darkmode') ? JSON.parse(localStorage.getItem('darkmode')!) : { value: false }
+  const init = ():IState => (typeof window !== 'undefined' && localStorage.getItem('darkmode')) ? JSON.parse(localStorage.getItem('darkmode')!) : { value: false }
 
   const [state, dispatch] = useReducer(DarkModeReducer,init())
 
