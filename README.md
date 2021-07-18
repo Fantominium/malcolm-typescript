@@ -32,11 +32,12 @@ the server, which presents my next challenge:
 
 Will use the malcolm branch to write and push tests!
 
-### Come back to testing in the tests folder for checking on what is rendered
+### Come back to testing in the tests folder for checking on what is rendered **DONE**
+
+- need to find out why text on footer is returning null in tests. Test runner set up for typescript files.
 
 ### TODO
 
     - Create tests for this; unit, integration, and snapshot. **Using Malcolm branch for this**
-    - integragtion script for github actions to run above tests and build project. **IN PROG**
-    - re-implement styling on old react site for these in styled components. (Not yet, will do soon)
-    - **DONE** solve the persistence issue of the context through navigation. (Will need a session/broser cookie, or make an api to take the easy route) 
+    - integragtion script for github actions to run above tests and build project. **Testing IN PROG, building done by CI script**
+    - re-implement styling on old react site for these in styled components. **In prog** 
