@@ -2,7 +2,7 @@ import ProfilePic from "../atoms/ProfilePic";
 import styled, {ThemeProvider} from "styled-components"
 import HeaderLinks from "../molecules/HeaderLinks"
 import {useContext, useEffect} from "react"
-import { ChildrenNodeProps, IProps, IState } from "../../interfaces/Types";
+import { ChildrenNodeProps, IContext, IProps } from "../../interfaces/Types";
 import { DarkModeContext } from "../Layout";
 
 const HeaderStyle = styled.div `
@@ -10,7 +10,7 @@ const HeaderStyle = styled.div `
     padding: .5em;
     width: 100%;
     /* background: rgba(255, 255, 255, 0.5); */
-    background: ${(props:IProps) => props.theme.color};
+    color: ${(props:IProps) => props.theme.color};
     min-height: 150px;
     margin: 0 auto;
     display: flex;
@@ -19,8 +19,8 @@ const HeaderStyle = styled.div `
     align-items: center;
 
     @media (min-width: 1350px) {
-        max-height: 100px;
-        margin: 0;
+        max-height: 3em;
+        margin: 0 auto;
         flex-direction: row;
         justify-content: space-between;
     }
@@ -28,14 +28,15 @@ const HeaderStyle = styled.div `
 
 const Header = ({ children }: ChildrenNodeProps) => {
 
-    const themeContext = useContext<IState>(DarkModeContext)
+    const themeContext = useContext<IContext>(DarkModeContext)
+    const themeValue = themeContext.state?.value
 
     useEffect(() => {
         //using the side effect to change color with each click
-    }, [themeContext.value])
+    }, [themeContext.state?.value])
 
     const theme = { //use context here to influence the color of the banner
-        // color: themeContext.value ? "blue" : "yellow"
+        color: themeValue ? "blue" : "yellow"
     }
     return (
         <ThemeProvider theme={theme}>

@@ -21,18 +21,23 @@ This video was also  helpful:
 
 Didn't use the -g option as i didn't want it installed globally in the container.
 
-Context being passed correctly, however the issue is updating the dom and having the change persist through navigation and page refresh
+## Objectives
 
-Also figure out how to have change reflected in styled components  - DONE
+using the init func in the reducer, but i need to figue out whats happening with useEffect and Local storage
+its being set and changed, but not maintained, being reset somewhere. **DONE**
 
-Image published to dockerhub. Will try pulling and running soon
+- Needed to check to see if the window obj was created, since my app renders first on
+the server, which presents my next challenge:
+- How to hydrate the darkmode context on the server side before presenting data to the client
 
-Refactor DarkModeContext to being a toggle. - DONE
+Will use the malcolm branch to write and push tests!
+
+### Come back to testing in the tests folder for checking on what is rendered **DONE**
+
+- need to find out why text on footer is returning null in tests. Test runner set up for typescript files.
 
 ### TODO
 
-    - Create tests for this; unit, integration, and snapshot.
-    - integragtion script for github actions to run above tests and build project
-    - re-implement styling on old react site for these in styled components.
-      - this might have been broken, need to fix big empty space in middle of site. Problem with positioning elements.
-    - solve the persistence issue of the context through navigation.
+    - Create tests for this; unit, integration, and snapshot. **Using Malcolm branch for this**
+    - integragtion script for github actions to run above tests and build project. **Testing IN PROG, building done by CI script**
+    - re-implement styling on old react site for these in styled components. **In prog** 

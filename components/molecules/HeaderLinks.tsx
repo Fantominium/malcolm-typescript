@@ -8,7 +8,6 @@ const LinkStyle = styled.div`
   flex-wrap: wrap;
   width: 40%;
   margin: .7em;
-  /* justify-content: space-between; */
   align-items: center;
 
   @media(min-width: 1350px){

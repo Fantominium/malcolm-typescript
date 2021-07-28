@@ -1,22 +1,23 @@
-import {ReactNode} from 'react'
+import {ReactNode, useEffect, useContext} from 'react'
 import Link from 'next/link'
-import styled from 'styled-components'
+import styled, { ThemeProvider } from 'styled-components'
+import { DarkModeContext } from '../Layout'
+import { IContext, IProps } from '../../interfaces/Types'
 
 
 const LinkStyle = styled.div`
   text-decoration: none;
   text-align: center;
   text-transform: uppercase;
-  color: #717171;
   font-weight: 800;
   font-family: 'Ubuntu', sans-serif;
   font-size: 1rem;
   margin: 0.75em;
   a:link{
-      color:#717171
+      color:${(props:IProps) => props.theme.color};
   }
   a:visited{
-      color:#552b58
+    color:${(props:IProps) => props.theme.color};
   }
 `
 
@@ -25,12 +26,24 @@ type Props = {
     href : string
 }
 const LinksAtom = ({label = "", href=""}:Props) => {
+    const themeContext = useContext<IContext>(DarkModeContext)
+    const themeValue = themeContext.state?.value
+
+    useEffect(() => {
+        //using the side effect to change color with each click
+    }, [themeContext.state?.value])
+
+    const theme = { //use context here to influence the color of the banner
+        color: themeValue ? "hsl(215, 80%, 27%)" : "hsl(205, 70%, 35%)" 
+    }
     return (
-        <LinkStyle>
-            <Link href={href} >
-                <a>{label}</a>
-            </Link>
-        </LinkStyle>
+        <ThemeProvider theme={theme}>
+            <LinkStyle>
+                <Link href={href} >
+                    <a>{label}</a>
+                </Link>
+            </LinkStyle>
+        </ThemeProvider>
     )
 }
 

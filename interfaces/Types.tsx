@@ -1,4 +1,4 @@
-import {ReactNode} from "react"
+import {Dispatch, ReactNode} from "react"
 
 export type IProps = {
     theme: {
@@ -12,14 +12,21 @@ export type ChildrenNodeProps = {
 }
 
 export type IState = {
-    value ?: boolean | undefined
+    value ?: boolean | undefined | string | null
 }
 
-export type Actions = {
+export type Actions = { //may need to be remove for it is not in use
     TOGGLE ?: string
 }
 
 export type IActions = {
-    type : string
+    type ?: string
     payload ?: boolean|undefined
 }
+
+export type IContext = {
+    state ?: IState,
+    dispatch ?: Dispatch<IActions>
+}
+
+
