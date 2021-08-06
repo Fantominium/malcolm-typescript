@@ -45,7 +45,7 @@ const Footer = () => {
     return(
         <ThemeProvider theme={theme}>
             <FooterStyle>
-                <a href =""><button>I'm here to stay (Footer)</button></a>
+                <a href ="https://github.com/login/oauth/authorize?client_id=5290d6a01e8cb6526397&redirect_uri=http://localhost:3000/oauth/redirect" ><button>Login with Github</button></a>
             </FooterStyle>
       </ThemeProvider>
     )

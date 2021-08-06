@@ -30,7 +30,7 @@ its being set and changed, but not maintained, being reset somewhere. **DONE**
 the server, which presents my next challenge:
 - How to hydrate the darkmode context on the server side before presenting data to the client
 
-Will use the malcolm branch to write and push tests!
+Oauth - Turn hello api into github oauth api. follow through instructions on vid : `https://www.youtube.com/watch?v=EzQuFxRlUos&t=1545s&ab_channel=KevinSimper` and convert to nextjs
 
 ### Come back to testing in the tests folder for checking on what is rendered **DONE**
 
