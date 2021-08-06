@@ -45,7 +45,7 @@ const Footer = () => {
     return(
         <ThemeProvider theme={theme}>
             <FooterStyle>
-                <span>I'm here to stay (Footer)</span>
+                <a href =""><button>I'm here to stay (Footer)</button></a>
             </FooterStyle>
       </ThemeProvider>
     )
