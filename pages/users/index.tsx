@@ -17,7 +17,7 @@ const WithStaticProps = ({ items }: Props) => (
       Example fetching data from inside <code>getStaticProps()</code>.
     </p>
     <p>You are currently on: /users</p>
-    <List items={items} />
+    {/* <p>{apiConnect()}</p> */}
     <p>
       <Link href="/">
         <a>Go home</a>

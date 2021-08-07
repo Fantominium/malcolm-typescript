@@ -30,7 +30,8 @@ its being set and changed, but not maintained, being reset somewhere. **DONE**
 the server, which presents my next challenge:
 - How to hydrate the darkmode context on the server side before presenting data to the client
 
-Oauth - Turn hello api into github oauth api. follow through instructions on vid : `https://www.youtube.com/watch?v=EzQuFxRlUos&t=1545s&ab_channel=KevinSimper` and convert to nextjs
+Oauth - currently have the github button hitting the api successfully. Need to get the return value into the api and utilised correctly
+also get the JSON parse to wrok with the returned value from the api
 
 ### Come back to testing in the tests folder for checking on what is rendered **DONE**
 

@@ -30,6 +30,7 @@ const FooterStyle = styled.footer`
     }
 `
 
+type Props  =  String
 
 const Footer = () => {
     const themeContext = useContext<IContext>(DarkModeContext)
@@ -42,10 +43,34 @@ const Footer = () => {
     const theme = { //use context here to influence the color of the banner
         color: themeValue ? "hsl(215, 60%, 20%)" : "hsl(215, 60%, 20%)"
     }
+
+    async function handleClick (url:Props) {
+        const options = {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({url})
+        }
+        const response = await fetch("../api/oauth/redirect/", options)
+
+        const data = await response.json()
+        if(data.code === "200"){
+            console.log(`success ${data.value}`)
+        } else {
+            console.log(`something wrong: ${data.code}`)
+            
+        }
+    }
+    const github = 'https://github.com/login/oauth/authorize?client_id=5290d6a01e8cb6526397&redirect_uri=http://localhost:3000/oauth/redirect'
+    const google = ''
+
     return(
         <ThemeProvider theme={theme}>
             <FooterStyle>
-                <a href ="https://github.com/login/oauth/authorize?client_id=5290d6a01e8cb6526397&redirect_uri=http://localhost:3000/oauth/redirect" ><button>Login with Github</button></a>
+            {/* <a href ="https://github.com/login/oauth/authorize?client_id=5290d6a01e8cb6526397&redirect_uri=http://localhost:3000/oauth/redirect" > */}
+                <button onClick={()=>handleClick(github)}>Login with Github</button>
+            {/* </a> */}
             </FooterStyle>
       </ThemeProvider>
     )
