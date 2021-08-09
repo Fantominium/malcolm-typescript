@@ -37,7 +37,7 @@ const Footer = () => {
     const themeValue = themeContext.state?.value
 
     useEffect(() => {
-        //using the side effect to change color with each click
+        //using the side effect to change color with each click, if the state is set
     }, [themeContext.state?.value])
 
     const theme = { //use context here to influence the color of the banner
@@ -63,7 +63,7 @@ const Footer = () => {
         }
     }
     const github = 'https://github.com/login/oauth/authorize?client_id=5290d6a01e8cb6526397&redirect_uri=http://localhost:3000/oauth/redirect'
-    const google = ''
+    // const google = ''
 
     return(
         <ThemeProvider theme={theme}>

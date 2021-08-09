@@ -30,8 +30,7 @@ its being set and changed, but not maintained, being reset somewhere. **DONE**
 the server, which presents my next challenge:
 - How to hydrate the darkmode context on the server side before presenting data to the client
 
-Oauth - currently have the github button hitting the api successfully. Need to get the return value into the api and utilised correctly
-also get the JSON parse to wrok with the returned value from the api
+Oauth - Connected to the api and Cors playing well. Find the way to connect to github authorization api and get back auth key
 
 ### Come back to testing in the tests folder for checking on what is rendered **DONE**
 
