@@ -31,6 +31,13 @@ const FooterStyle = styled.footer`
 `
 
 type Props  =  String
+type  options = {
+    method: string;
+    headers: {
+        'Content-Type': string;
+    };
+    body: string;
+}
 
 const Footer = () => {
     const themeContext = useContext<IContext>(DarkModeContext)
@@ -45,11 +52,12 @@ const Footer = () => {
     }
 
     async function handleClick (url:Props) {
-        const options = {
+        const options:options = {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json'
             },
+            // mode: 'cors',
             body: JSON.stringify({url})
         }
         const response = await fetch("../api/oauth/redirect/", options)

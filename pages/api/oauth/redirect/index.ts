@@ -6,7 +6,7 @@ import initCors from "../../../../lib/initCors"
 const cors = initCors(
     Cors({
       methods:['POST','GET','OPTIONS'],  
-      origin: "*",
+    //   origin: "*",
       // preflightContinue: false,
       // optionsSuccessStatus: 204
     })
