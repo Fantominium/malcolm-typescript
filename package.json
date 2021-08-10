@@ -9,9 +9,11 @@
     "test": "jest --env=jsdom"
   },
   "dependencies": {
+    "@types/next-auth": "^3.15.0",
     "@types/styled-components": "^5.1.9",
     "cors": "^2.8.5",
     "next": "^10.2.2",
+    "npm": "^7.20.5",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "styled-components": "latest",

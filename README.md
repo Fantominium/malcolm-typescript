@@ -30,7 +30,7 @@ its being set and changed, but not maintained, being reset somewhere. **DONE**
 the server, which presents my next challenge:
 - How to hydrate the darkmode context on the server side before presenting data to the client
 
-Oauth - Connected to the api and Cors playing well. Find the way to connect to github authorization api and get back auth key
+Oauth - followed a more straightforward method for accomplishing oauth. Needs cleaning up and refactoring to my needs, but oauth is functional now with google and github.
 
 ### Come back to testing in the tests folder for checking on what is rendered **DONE**
 
