@@ -22,7 +22,7 @@ const FooterStyle = styled.footer`
         margin-left: .5em;
     }
     button {
-          background-color: #1eb1fc;
+          background-color: hsl(230, 80%, 60%);
           color: #fff;
           border: none;
           border-radius: 4px;
@@ -31,7 +31,7 @@ const FooterStyle = styled.footer`
           padding: 0.5rem 1rem;
         }
         button:hover {
-          background-color: #1b9fe2;
+          background-color: hsl(230, 80%, 50%);
         }
     @media (min-width: 1350px) {
         flex-flow: row nowrap;
