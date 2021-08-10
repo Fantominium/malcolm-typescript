@@ -82,7 +82,7 @@ const Footer = () => {
                 signIn();
               }}
             >
-            <button className = "signInButton">Login with Github</button>
+            <button className = "signInButton">Login</button>
             </a>
           )}
           {session && (
