@@ -30,7 +30,7 @@ const LayoutStyles = styled.body`
 const LayoutStyle = ({ children }: ChildrenNodeProps) => {
 
     const themeContext = useContext<IContext>(DarkModeContext)
-    const themeValue = themeContext.state?.value
+    const themeValue = themeContext?.state?.value
 
     useEffect(() => {
         //using the side effect to change color with each click
@@ -39,11 +39,12 @@ const LayoutStyle = ({ children }: ChildrenNodeProps) => {
     const theme = { //use context here to influence the color of the banner
         color: themeValue ? 
         `linear-gradient(60deg, 
-            rgba(0, 179, 255, 0.209), 
-            rgba(77, 255, 0, 0.209));` : `linear-gradient(60deg, rgba(60, 129, 143, 0.492), 
+            hsl(28, 100%, 65%), 
+            hsl(100, 100%, 65%)` : `linear-gradient(60deg, rgba(60, 129, 143, 0.492), 
             rgba(97, 139, 74, 0.402));`
             //bg image don't take simple colors
     }
+    console.log(theme)
     return (
         <ThemeProvider theme={theme}>
             <LayoutStyles>

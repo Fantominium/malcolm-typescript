@@ -40,7 +40,7 @@ const ProfilePic = ({url = "", alt = ""}: Props) => {
                     height={80}
                     width ={80}
                     className= "imageStyle"
-                    src={session.user?.image!}
+                    src={session?.user?.image!}
                     alt={alt}
                     /> 
                     <style jsx global>{`
@@ -48,8 +48,6 @@ const ProfilePic = ({url = "", alt = ""}: Props) => {
                         border-radius: 999px;
                     }
                     `}</style>
-
-                    
                 </>
               )}
         </ImageSpace>
