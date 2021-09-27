@@ -2,7 +2,7 @@ import {Dispatch, ReactNode} from "react"
 
 export type IProps = {
     theme: {
-        color: string
+        mode: string
     }
 }
 
