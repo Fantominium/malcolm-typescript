@@ -4,7 +4,6 @@ import HeaderLinks from "../molecules/HeaderLinks"
 import {useContext, useEffect} from "react"
 import { ChildrenNodeProps, IContext } from "../../interfaces/Types";
 import { DarkModeContext } from "../Layout";
-import { useSession } from 'next-auth/client'
 
 const HeaderStyle = styled.div `
 
