@@ -9,6 +9,7 @@ const BodyStyles = styled.div `
     flex-grow: 1;
     margin: 0;
     padding: .5rem;
+    background: #b4b4b43a;
 
   @media (min-width: 1350px) {
     min-height: 100vh;

@@ -7,14 +7,13 @@ type Props = {
     alt : string | undefined
 }
 
-const ImageSpace = styled.div `
-
+const ImageSpace = styled.div`
     padding: .5em;
     display: inline-block; 
 `
 
 const ProfilePic = ({url = "", alt = ""}: Props) => {
-    const [session, loading] = useSession();
+    const [session] = useSession();
 
     return (
         <ImageSpace>
@@ -32,6 +31,7 @@ const ProfilePic = ({url = "", alt = ""}: Props) => {
                         border-radius: 999px;
                     }
                     `}</style>
+                    <p>Please Log in</p>
                 </>
             )}
             {session && (
@@ -42,12 +42,13 @@ const ProfilePic = ({url = "", alt = ""}: Props) => {
                     className= "imageStyle"
                     src={session?.user?.image!}
                     alt={alt}
-                    /> 
+                    />
                     <style jsx global>{`
                     .imageStyle {
                         border-radius: 999px;
                     }
                     `}</style>
+                    <p>{session?.user?.email}</p>
                 </>
               )}
         </ImageSpace>

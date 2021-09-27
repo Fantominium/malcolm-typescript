@@ -26,13 +26,25 @@ const LayoutStyle = ({ children }: ChildrenNodeProps) => {
         display : flex;
         flex-direction : column;
         background-image : linear-gradient(60deg, #aeaeff, #ffffa8);
+        overflow: hidden;
         a:link{
             text-decoration: none;
         }
         a:hover{
             color: #ff6060;
         }
-        
+        button {
+            background-color: hsl(230, 80%, 60%);
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+            padding: 0.5rem 1rem;
+          }
+          button:hover {
+            background-color: hsl(230, 80%, 50%);
+          }
         `
 
     const nightTheme = 
@@ -42,12 +54,25 @@ const LayoutStyle = ({ children }: ChildrenNodeProps) => {
         display : flex;
         flex-direction : column;
         background-image : linear-gradient(60deg, #caca85, #5da05d);
+        overflow: hidden;
         a{
             text-decoration: none;
         }
         a:hover{
             color: #00ffdd;
         }
+        button {
+            background-color: hsl(230, 80%, 60%);
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+            padding: 0.5rem 1rem;
+          }
+          button:hover {
+            background-color: hsl(230, 70.40816326530611%, 61.568627450980394%);
+          }
         `
 
     useEffect(() => {

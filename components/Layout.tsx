@@ -34,10 +34,10 @@ export const Layout = ({ children, title = 'This is the default title' }: Childr
           <Header>
             <SliderButton dispatch={dispatch}/>
           </Header>
-            <Content>
-              {children}
-            </Content>
-            <Footer/>
+          <Content>
+            {children}
+          </Content>
+          <Footer/>
         </div>
       </LayoutStyle>
     </DarkModeContext.Provider>

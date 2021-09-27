@@ -1,14 +1,13 @@
 import styled, {ThemeProvider} from "styled-components"
-import { IContext, IProps } from "../../interfaces/Types"
+import { IContext } from "../../interfaces/Types"
 import {useContext, useEffect} from "react"
 import { DarkModeContext } from "../Layout";
 import { signIn, signOut, useSession } from 'next-auth/client';
 import Link from 'next/link';
 
 
-const FooterStyle = styled.footer`
+const FooterStyle = styled.div`
 
-    color: ${(props:IProps) => props.theme.color};
     min-height: 100px;
     display: flex;
     flex-flow: row wrap;
@@ -17,22 +16,12 @@ const FooterStyle = styled.footer`
     left: 0;
     bottom: 0;
     position: fixed;
+    background: none;
     input {
         margin-right: .5em;
         margin-left: .5em;
     }
-    button {
-          background-color: hsl(230, 80%, 60%);
-          color: #fff;
-          border: none;
-          border-radius: 4px;
-          cursor: pointer;
-          font-size: 1rem;
-          padding: 0.5rem 1rem;
-        }
-        button:hover {
-          background-color: hsl(230, 80%, 50%);
-        }
+
     @media (min-width: 1350px) {
         flex-flow: row nowrap;
         justify-content: center;
@@ -44,17 +33,8 @@ const FooterStyle = styled.footer`
     }
 `
 
-type Props  =  String
-type  options = {
-    method: string;
-    headers: {
-        'Content-Type': string;
-    };
-    body: string;
-}
-
 const Footer = () => {
-    const [session, loading] = useSession();
+    const [session] = useSession();
 
     const themeContext = useContext<IContext>(DarkModeContext)
     const themeValue = themeContext.state?.value
@@ -69,11 +49,7 @@ const Footer = () => {
 
     return(
         <ThemeProvider theme={theme}>
-
-
             <FooterStyle>
-
-
             {!session && (
             <a
               href="/api/auth/signin"
@@ -95,7 +71,6 @@ const Footer = () => {
                   />
                 </a>
               </Link>
-              <span className="email">{session.user?.email}</span>
               <a
                 href="/api/auth/signout"
                 onClick={(e) => {
@@ -107,8 +82,7 @@ const Footer = () => {
               </a>
             </>
           )}
-            
-            </FooterStyle>
+          </FooterStyle>
       </ThemeProvider>
     )
 }
