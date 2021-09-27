@@ -8,8 +8,11 @@ type Props = {
 }
 
 const ImageSpace = styled.div`
+    /* padding: .5em;
+    display: inline-block;  */
     padding: .5em;
-    display: inline-block; 
+    display: flex;
+    flex-direction: column;
 `
 
 const ProfilePic = ({url = "", alt = ""}: Props) => {
