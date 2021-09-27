@@ -32,6 +32,7 @@ const LayoutStyle = ({ children }: ChildrenNodeProps) => {
         a:hover{
             color: #ff6060;
         }
+        
         `
 
     const nightTheme = 
