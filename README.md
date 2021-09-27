@@ -30,7 +30,8 @@ its being set and changed, but not maintained, being reset somewhere. **DONE**
 the server, which presents my next challenge:
 - How to hydrate the darkmode context on the server side before presenting data to the client
 
-Will use the malcolm branch to write and push tests!
+Oauth - followed a more straightforward method for accomplishing oauth. Needs cleaning up and refactoring to my needs, but oauth is functional now with google and github.
+Followed this tut <https://medium.com/technest/next-js-oauth-with-nextauth-js-53a9f2b9994f>
 
 ### Come back to testing in the tests folder for checking on what is rendered **DONE**
 

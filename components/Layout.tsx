@@ -22,7 +22,6 @@ export const Layout = ({ children, title = 'This is the default title' }: Childr
   }, [state])
 
   return (
-    //retrieve darkmode and use it here
     
     <DarkModeContext.Provider value = {{state, dispatch}}>
       <LayoutStyle>
