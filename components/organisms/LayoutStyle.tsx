@@ -40,12 +40,12 @@ const LayoutStyle = ({ children }: ChildrenNodeProps) => {
         padding : 0;
         display : flex;
         flex-direction : column;
-        background-image : linear-gradient(60deg, #caca85, #6d6db8);
+        background-image : linear-gradient(60deg, #caca85, #5da05d);
         a{
             text-decoration: none;
         }
         a:hover{
-            color: #00ff55;
+            color: #00ffdd;
         }
         `
 
